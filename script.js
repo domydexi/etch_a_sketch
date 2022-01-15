@@ -8,9 +8,12 @@ function makeGrid (rows, cols) {
 
     for(c = 0; c < (rows * cols); c++) {
         let cell = document.createElement("div");
-        cell.innerText = (c + 1);
         container.appendChild(cell).className = "grid-item";
     };
 };
 
-makeGrid(16,16);
+container.addEventListener("mouseover", function(event){
+    event.target.classList.replace("grid-item", "color");
+});
+
+makeGrid(20,20);
